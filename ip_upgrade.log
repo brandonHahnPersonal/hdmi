@@ -1,0 +1,35 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Thu Nov 18 17:25:21 2021
+| Host         : EVT-LAB-456-26 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'brandonBlockDesign_brandonColors_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of brandonBlockDesign_brandonColors_0_0 (wsu.edu:user:brandonColors:1.0) from (Rev. 1) to (Rev. 3)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'brandonBlockDesign_brandonColors_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'background'
+
+-Upgrade has added port 'color1'
+
+-Upgrade has added port 'color2'
+
+-Upgrade has added port 'color3'
+
+-Upgrade has added port 'color4'
+
+

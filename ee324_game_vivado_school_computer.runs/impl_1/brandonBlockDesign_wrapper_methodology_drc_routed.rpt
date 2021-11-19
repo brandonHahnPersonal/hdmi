@@ -1,0 +1,310 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Thu Nov 18 20:48:59 2021
+| Host         : EVT-LAB-456-26 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file brandonBlockDesign_wrapper_methodology_drc_routed.rpt -pb brandonBlockDesign_wrapper_methodology_drc_routed.pb -rpx brandonBlockDesign_wrapper_methodology_drc_routed.rpx
+| Design       : brandonBlockDesign_wrapper
+| Device       : xc7z007sclg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 53
++-----------+------------------+------------------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                                      | Violations |
++-----------+------------------+------------------------------------------------------------------+------------+
+| TIMING-6  | Critical Warning | No common primary clock between related clocks                   | 4          |
+| TIMING-7  | Critical Warning | No common node between related clocks                            | 2          |
+| TIMING-51 | Critical Warning | No common phase between related clocks from parallel CMBs        | 2          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                     | 1          |
+| TIMING-16 | Warning          | Large setup violation                                            | 24         |
+| TIMING-18 | Warning          | Missing input or output delay                                    | 16         |
+| TIMING-20 | Warning          | Non-clocked latch                                                | 1          |
+| TIMING-56 | Warning          | Missing logically or physically excluded clock groups constraint | 3          |
++-----------+------------------+------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and clk_out1_brandonBlockDesign_clk_wiz_0_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1]
+Related violations: <none>
+
+TIMING-6#2 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and clk_out1_brandonBlockDesign_clk_wiz_0_1_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1_1]
+Related violations: <none>
+
+TIMING-6#3 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_out1_brandonBlockDesign_clk_wiz_0_1 and clk_out1_brandonBlockDesign_clk_wiz_0_1_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1] -to [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1_1]
+Related violations: <none>
+
+TIMING-6#4 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_out1_brandonBlockDesign_clk_wiz_0_1_1 and clk_out1_brandonBlockDesign_clk_wiz_0_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1_1] -to [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and clk_out1_brandonBlockDesign_clk_wiz_0_1 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1]
+Related violations: <none>
+
+TIMING-7#2 Critical Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and clk_out1_brandonBlockDesign_clk_wiz_0_1_1 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_brandonBlockDesign_clk_wiz_0_1_1]
+Related violations: <none>
+
+TIMING-51#1 Critical Warning
+No common phase between related clocks from parallel CMBs  
+The clocks clk_fpga_0 and clk_out1_brandonBlockDesign_clk_wiz_0_1 are timed together but have no phase relationship. The design could fail in hardware. The clocks originate from two parallel Clock Modifying Blocks and at least one of the MMCM or PLLs clock dividers is not set to 1. To be safely timed, all MMCMs or PLLs involved in parallel clocking must have the clock divider set to 1.
+Related violations: <none>
+
+TIMING-51#2 Critical Warning
+No common phase between related clocks from parallel CMBs  
+The clocks clk_fpga_0 and clk_out1_brandonBlockDesign_clk_wiz_0_1_1 are timed together but have no phase relationship. The design could fail in hardware. The clocks originate from two parallel Clock Modifying Blocks and at least one of the MMCM or PLLs clock dividers is not set to 1. To be safely timed, all MMCMs or PLLs involved in parallel clocking must have the clock divider set to 1.
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell brandonBlockDesign_i/gameTopMod_0/inst/h_counter/VDE_reg_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) brandonBlockDesign_i/gameTopMod_0/inst/nolabel_line28/VDE_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -11.552 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[30].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -11.603 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[34].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -11.660 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[31].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -11.661 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[27].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -11.677 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[32].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -11.734 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[38].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -11.746 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[36].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -11.759 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[35].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -11.764 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[18].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -11.830 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[25].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -11.832 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[21].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -11.888 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[28].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -11.908 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[23].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -11.952 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[37].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -11.963 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[26].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -11.985 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[20].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -12.050 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[16].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -12.055 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[24].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -12.060 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[33].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -12.062 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[19].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -12.092 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[39].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -12.185 ns between brandonBlockDesign_i/brandon_height_and_w_2/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg1_reg[1]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[29].srl16_i/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -12.189 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[22].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -12.220 ns between brandonBlockDesign_i/brandon_height_and_w_3/inst/brandon_height_and_width_v1_0_S00_AXI_inst/slv_reg2_reg[4]/C (clocked by clk_fpga_0) and brandonBlockDesign_i/hdmi_tx_0/inst/srldly_0/srl[17].srl16_i_srlopt/D (clocked by clk_out1_brandonBlockDesign_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on btn[0] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on btn[1] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on btn[2] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on btn[3] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on sw[0] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on sw[1] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on sw[2] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An input delay is missing on sw[3] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An input delay is missing on sw[4] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An input delay is missing on sw[5] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An input delay is missing on sw[6] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An input delay is missing on sw[7] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An output delay is missing on led[0] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An output delay is missing on led[1] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on led[2] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on led[3] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch brandonBlockDesign_i/gameTopMod_0/inst/nolabel_line28/VDE_reg cannot be properly analyzed as its control pin brandonBlockDesign_i/gameTopMod_0/inst/nolabel_line28/VDE_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-56#1 Warning
+Missing logically or physically excluded clock groups constraint  
+Multiple clocks are user generated or auto-derived on the source pin brandonBlockDesign_i/clk_wiz_0/inst/mmcm_adv_inst/CLKFBOUT but are not logically or physically exclusive with respect to one another. To have the static timing analysis match the behavior in hardware, there cannot be multiple clocks generated on the same pin and when such situation occurs, the clocks should be defined as physically or logically exclusive. The list of clocks generated on the source pin is: clkfbout_brandonBlockDesign_clk_wiz_0_1
+clkfbout_brandonBlockDesign_clk_wiz_0_1_1
+Related violations: <none>
+
+TIMING-56#2 Warning
+Missing logically or physically excluded clock groups constraint  
+Multiple clocks are user generated or auto-derived on the source pin brandonBlockDesign_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 but are not logically or physically exclusive with respect to one another. To have the static timing analysis match the behavior in hardware, there cannot be multiple clocks generated on the same pin and when such situation occurs, the clocks should be defined as physically or logically exclusive. The list of clocks generated on the source pin is: clk_out1_brandonBlockDesign_clk_wiz_0_1
+clk_out1_brandonBlockDesign_clk_wiz_0_1_1
+Related violations: <none>
+
+TIMING-56#3 Warning
+Missing logically or physically excluded clock groups constraint  
+Multiple clocks are user generated or auto-derived on the source pin brandonBlockDesign_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 but are not logically or physically exclusive with respect to one another. To have the static timing analysis match the behavior in hardware, there cannot be multiple clocks generated on the same pin and when such situation occurs, the clocks should be defined as physically or logically exclusive. The list of clocks generated on the source pin is: clk_out2_brandonBlockDesign_clk_wiz_0_1
+clk_out2_brandonBlockDesign_clk_wiz_0_1_1
+Related violations: <none>
+
+
